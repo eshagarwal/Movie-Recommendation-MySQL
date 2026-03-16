@@ -1,0 +1,48 @@
+/* Table styles inside cards */
+.results table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.results th {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 500;
+}
+
+.results td {
+  padding: 0.5rem 0.5rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.results tr:last-child td {
+  border-bottom: none;
+}
+
+.results tr:hover td {
+  background-color: #eff6ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.loading {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 0.85rem;
+}

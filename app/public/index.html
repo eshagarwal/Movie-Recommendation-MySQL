@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Recommender</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 shadow-sm px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center gap-3">
+      <span class="text-2xl">🎬</span>
+      <h1 class="text-xl font-semibold text-gray-800 tracking-tight">Movie Recommender</h1>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+
+    <!-- Top Rated — horizontal bar -->
+    <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+      <h5 class="text-base font-semibold text-gray-800 mb-1">Top Rated Movies</h5>
+      <p class="text-xs text-gray-400 mb-4">Highest average ratings across all users</p>
+      <div id="chart-top-rated"></div>
+    </div>
+
+    <!-- By Genre — column chart -->
+    <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+      <h5 class="text-base font-semibold text-gray-800 mb-1">Movies by Genre</h5>
+      <p class="text-xs text-gray-400 mb-3">Browse latest movies in a specific genre</p>
+      <div class="flex gap-2 mb-4">
+        <input
+          id="genre-input"
+          type="text"
+          placeholder="e.g. Action, Drama"
+          class="flex-1 text-sm border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        />
+        <button
+          onclick="fetchByGenre()"
+          style="background:#2563eb;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:0.875rem;font-weight:500;cursor:pointer;white-space:nowrap;"
+          onmouseover="this.style.background='#1d4ed8'"
+          onmouseout="this.style.background='#2563eb'"
+        >Search</button>
+      </div>
+      <div id="by-genre" class="text-sm text-gray-700 space-y-2"></div>
+    </div>
+
+    <!-- Highly Rated by Genre — grouped bar -->
+    <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+      <h5 class="text-base font-semibold text-gray-800 mb-1">Highly Rated by Genre</h5>
+      <p class="text-xs text-gray-400 mb-4">Top rated movies grouped across genres</p>
+      <div id="chart-highly-rated"></div>
+    </div>
+
+    <!-- Avg Rating by Genre — donut -->
+    <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+      <h5 class="text-base font-semibold text-gray-800 mb-1">Average Rating per Genre</h5>
+      <p class="text-xs text-gray-400 mb-4">How each genre stacks up on average</p>
+      <div id="chart-avg-genre"></div>
+    </div>
+
+    <!-- Trending — area chart -->
+    <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+      <h5 class="text-base font-semibold text-gray-800 mb-1">Trending Movies</h5>
+      <p class="text-xs text-gray-400 mb-4">Most watched movies right now</p>
+      <div id="chart-trending"></div>
+    </div>
+
+    <!-- Most Rated by Users — radial bar -->
+    <div class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+      <h5 class="text-base font-semibold text-gray-800 mb-1">Rated by Most Users</h5>
+      <p class="text-xs text-gray-400 mb-4">Movies with the highest number of user ratings</p>
+      <div id="chart-most-users"></div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+
+  <footer class="bg-white border-t border-gray-200 mt-10 py-5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-gray-400">
+      <span>🎬 Movie Recommender</span>
+      <span>© 2026 · Built with Tailwind CSS &amp; ApexCharts</span>
+    </div>
+  </footer>
+
+</body>
+</html>
