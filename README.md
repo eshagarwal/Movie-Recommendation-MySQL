@@ -107,4 +107,9 @@ Movie-Recommendation MySQL/
 - **Database Administration**: MySQL management and optimization
 - **Full-Stack Integration**: Connecting frontend to database via backend
 
----
+## Video Demo
+
+https://github.com/user-attachments/assets/fa40b581-03c5-4930-bba0-43f7f1ff2341
+
+
+
